@@ -52,7 +52,9 @@ typedef struct{
 #define SeDebugPrint(fmt,...)
 #endif
 
-#ifdef CONFIG_USING_PRINT
+#define SePrintf printf
+
+#if CONFIG_USING_PRINT==1
 int SeNormalPrint(SeConstString csFormat, ...);
 #endif
 int SePrintLog(SeInt8 nlevel, const SeChar *fmt, ...);

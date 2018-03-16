@@ -4,7 +4,7 @@
 #include "../Config/Config.h"
 #include "../Common/Types.h"
 #include "../Common/Time.h"
-#ifdef CONFIG_USING_RTOS
+#if CONFIG_USING_RTOS==1
 #include "../System/cmsis_os.h"
 #else
 #include "../Common/Scheduler.h"

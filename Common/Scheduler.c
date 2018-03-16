@@ -1,6 +1,6 @@
 #include "Scheduler.h"
 
-#ifndef CONFIG_USE_RTOS
+#if CONFIG_USE_RTOS!=1
 
 #ifndef CONFIG_MAX_TASK_NUM
 #define CONFIG_MAX_TASK_NUM    5

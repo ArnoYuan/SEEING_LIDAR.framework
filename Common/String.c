@@ -2,7 +2,7 @@
 
 
 
-#ifdef CONFIG_USING_PRINT
+#if CONFIG_USING_PRINT==1
 
 #include <stdio.h>
 #include <stdlib.h>

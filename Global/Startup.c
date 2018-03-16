@@ -3,7 +3,7 @@
 
 int main(void)
 {
-#ifndef CONFIG_USING_RTOS
+#if CONFIG_USING_RTOS!=1
     scheduler_init();
 #endif
     
@@ -15,7 +15,7 @@ int main(void)
     {
         SeErrorPrint("System Initial Failuer!");
     }
-#ifdef CONFIG_USING_RTOS
+#if CONFIG_USING_RTOS==1
     osKernelStart();
 #else
     scheduler_start();

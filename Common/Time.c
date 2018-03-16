@@ -4,7 +4,7 @@
 SeMillis SeTimeGetMilliSecond(void)
 {
     SeMillis nMs = 0;
-#ifdef CONFIG_USING_RTOS
+#if CONFIG_USING_RTOS==1
     portTickType tCount = xTaskGetTickCount();
     nMs = tCount;
 #endif
@@ -20,8 +20,8 @@ void SeDelayMs(SeMillis nMs)
 
 void SeSleepMs(SeMillis nMs)
 {
-#ifdef CONFIG_USING_RTOS
-    
+#if CONFIG_USING_RTOS==1
+    osDelay(nMs);
 #else
     SeDelayMs(nMs);
 #endif
